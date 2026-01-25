@@ -1,0 +1,92 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# SemiparMF
+
+SemiparMF implements a Semiparametric Spatiotemporal Model with Mixed Frequencies.
+
+It is designed for scenarios where the response variable (e.g., quarterly crop yield) is observed at a lower frequency than a key non-parametric predictor (e.g., monthly rainfall or NDVI), while also accounting for parametric covariates and spatial/temporal autocorrelation.
+
+The methodology is based on the paper:
+
+> Malabanan, V. A., Lansangan, J. R. G., & Barrios, E. B. (2022). Semiparametric Spatiotemporal Model with Mixed Frequencies: With Application in Crop Forecasting. Science & Engineering Journal, 15(2), 90-107.
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of SemiparMF is to ...
+
+## Installation
+
+You can install the development version of SemiparMF like so:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("jzeuzs/SemiparMF")
+```
+
+## Example
+
+This example demonstrates how to simulate data and fit the model using the package's built-in tools.
+
+```{r}
+library(SemiparMF)
+library(sf)
+
+# 1. Generate synthetic data
+# We simulate a 6x6 grid (36 locations) over 50 time points.
+# The frequency ratio is 3 (e.g., months per quarter).
+set.seed(123)
+sim_data <- simulate_semipar_data(n_side = 6, t_len = 50, k = 3, rho_error = 0.5)
+
+# Inspect the data structure
+head(sim_data$data)
+
+# 2. Fit the Semiparametric Model
+# Formula: Response ~ Parametric_Covariate
+# We specify the time and ID columns for the panel structure.
+fit <- semiparMF(
+  formula = Y ~ Z,
+  data_sf = sim_data$data,
+  high_freq_data = sim_data$X_high,
+  time_col = "time_id",
+  id_col = "location_id"
+)
+
+# 3. View Results
+summary(fit)
+```
+
+You can also inspect the convergence of the backfitting algorithm by plotting the Mean Squared Prediction Error (MSPE) over iterations.
+
+```{r}
+plot(fit)
+```
+
+Furthermore, you can predict the response for new data. Note that prediction aggregates the high-frequency non-parametric component and adds the parametric linear combination.
+
+```{r}
+# Predict on the training data for demonstration
+preds <- predict(
+  fit, 
+  new_high_freq = sim_data$X_high, 
+  new_z = matrix(sim_data$data$Z, nrow = 36, byrow = TRUE),
+  new_w = matrix(sim_data$data$W, nrow = 36, byrow = TRUE)
+)
+
+# Compare first 5 predictions to actuals
+head(as.vector(preds), 5)
+head(sim_data$data$Y, 5)
+```

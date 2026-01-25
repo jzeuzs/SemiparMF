@@ -1,9 +1,14 @@
 Package: SemiparMF
-Title: What the Package Does (One Line, Title Case)
+Title: Semiparametric Spatiotemporal Model with Mixed Frequencies
 Version: 0.0.0.9000
 Authors@R: 
     person("Jezzu Morrisen", "Quimosing", , "mail@j3z.dev", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Description: Implements a semiparametric spatiotemporal model for data with mixed frequencies,
+    specifically where the response variable is observed at a lower frequency than some covariates.
+    The estimation uses an iterative backfitting algorithm that combines a non-parametric smoothing spline
+    for high-frequency data, parametric estimation for low-frequency and spatial neighborhood effects,
+    and an autoregressive error structure. Methodology based on Malabanan, Lansangan, and Barrios (2022) 
+    <doi:10.51324/sej.v15i2.146>.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
