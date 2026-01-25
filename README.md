@@ -22,8 +22,6 @@ The methodology is based on the paper:
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of SemiparMF is to …
-
 ## Installation
 
 You can install the development version of SemiparMF like so:
