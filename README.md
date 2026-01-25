@@ -20,6 +20,8 @@ The methodology is based on the paper:
 > 90-107.
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/jzeuzs/SemiparMF/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jzeuzs/SemiparMF/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 ## Installation

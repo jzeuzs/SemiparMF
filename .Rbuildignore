@@ -2,3 +2,6 @@
 .lintr
 air.toml
 ^README\.Rmd$
+^cran-comments\.md$
+^\.github$
+^revdep$

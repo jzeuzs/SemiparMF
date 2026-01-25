@@ -57,13 +57,20 @@ a non-parametric component for the high-frequency predictor, parametric componen
 low-frequency predictors and spatial neighborhood effects, and an autoregressive error structure.
 }
 \examples{
-\dontrun{
-# Assuming 'corn_data' is an sf object and 'ndvi_array' is the high-freq data
-fit <- semiparMF(Yield ~ Area, data_sf = corn_data, high_freq_data = ndvi_array,
-                 time_col = "Quarter", id_col = "Province")
+# Simulate data using the package's included simulation function
+sim <- simulate_semipar_data(n_side = 4, t_len = 20, k = 3, rho_error = 0.5)
+
+# Fit the model
+fit <- semiparMF(
+  formula = Y ~ Z, 
+  data_sf = sim$data, 
+  high_freq_data = sim$X_high,
+  time_col = "time_id", 
+  id_col = "location_id"
+)
+
+# Inspect results
 summary(fit)
-plot(fit)
-}
 
 }
 \references{

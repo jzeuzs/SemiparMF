@@ -36,3 +36,12 @@ A list containing:
 Generates a synthetic dataset for testing the SemiparMF model.
 Structure follows Equation (7) in Malabanan et al. (2022).
 }
+\examples{
+# Generate a small dataset
+sim <- simulate_semipar_data(n_side = 4, t_len = 10, k = 3)
+
+# Check dimensions
+dim(sim$data) # 160 x 5 (16 locations * 10 time points)
+dim(sim$X_high) # 16 x 10 x 3
+
+}

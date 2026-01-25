@@ -14,6 +14,15 @@
 #'   \item{data}{An `sf` object containing Y, Z, W, and geometry.}
 #'   \item{X_high}{An array (N x T x K) of high-frequency covariates.}
 #'   \item{true_params}{List of true parameters used for generation.}
+#'
+#' @examples
+#' # Generate a small dataset
+#' sim <- simulate_semipar_data(n_side = 4, t_len = 10, k = 3)
+#'
+#' # Check dimensions
+#' dim(sim$data) # 160 x 5 (16 locations * 10 time points)
+#' dim(sim$X_high) # 16 x 10 x 3
+#' 
 #' @export
 simulate_semipar_data <- function(
     n_side = 6,

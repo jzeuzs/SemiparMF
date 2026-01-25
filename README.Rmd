@@ -24,6 +24,7 @@ The methodology is based on the paper:
 > Malabanan, V. A., Lansangan, J. R. G., & Barrios, E. B. (2022). Semiparametric Spatiotemporal Model with Mixed Frequencies: With Application in Crop Forecasting. Science & Engineering Journal, 15(2), 90-107.
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/jzeuzs/SemiparMF/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jzeuzs/SemiparMF/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 ## Installation
