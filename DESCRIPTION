@@ -1,6 +1,6 @@
 Package: SemiparMF
 Title: Semiparametric Spatiotemporal Model with Mixed Frequencies
-Version: 0.0.0.9000
+Version: 1.0.0
 Authors@R: 
     person("Jezzu Morrisen", "Quimosing", , "mail@j3z.dev", role = c("aut", "cre", "cph"))
 Description: Fits a semiparametric spatiotemporal model for data with mixed frequencies,

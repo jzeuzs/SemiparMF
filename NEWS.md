@@ -1,3 +1,3 @@
-# SemiparMF (development version)
+# SemiparMF 1.0.0
 
 * Initial CRAN submission.
