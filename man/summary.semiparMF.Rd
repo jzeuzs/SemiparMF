@@ -11,6 +11,14 @@
 
 \item{...}{Additional arguments.}
 }
+\value{
+A list of class \code{summary.semiparMF} containing:
+\item{coefficients}{A list of estimated parameters (beta, gamma, rho).}
+\item{last_mspe}{The Mean Squared Prediction Error from the final iteration.}
+\item{residuals_summary}{Summary statistics of the residuals.}
+\item{iterations}{Total number of iterations performed.}
+\item{call}{The function call.}
+}
 \description{
 Summary Method for SemiparMF
 }

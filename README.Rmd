@@ -21,7 +21,7 @@ It is designed for scenarios where the response variable (e.g., quarterly crop y
 
 The methodology is based on the paper:
 
-> Malabanan, V. A., Lansangan, J. R. G., & Barrios, E. B. (2022). Semiparametric Spatiotemporal Model with Mixed Frequencies: With Application in Crop Forecasting. Science & Engineering Journal, 15(2), 90-107.
+> Malabanan, V. A., Lansangan, J. R. G., & Barrios, E. B. (2022). Semiparametric Spatiotemporal Model with Mixed Frequencies: With Application in Crop Forecasting. Science & Engineering Journal, 15(2), 90-107. <https://scienggj.org/2022/SciEnggJ%202022-vol15-no02-p90-107-Malabanan%20et%20al.pdf>
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/jzeuzs/SemiparMF/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jzeuzs/SemiparMF/actions/workflows/R-CMD-check.yaml)

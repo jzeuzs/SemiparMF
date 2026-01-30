@@ -11,6 +11,9 @@
 
 \item{...}{Additional graphical parameters.}
 }
+\value{
+No return value, called for side effects (plotting).
+}
 \description{
 Plots the Mean Squared Prediction Error (MSPE) across iterations.
 }

@@ -2,6 +2,8 @@
 #'
 #' @param x An object of class \code{semiparMF}.
 #' @param ... Additional arguments.
+#'
+#' @return The input object \code{x} is returned invisibly.
 #' @export
 print.semiparMF <- function(x, ...) {
     cat("\nSemiparametric Spatiotemporal Model (Mixed Frequency)\n")
@@ -19,6 +21,13 @@ print.semiparMF <- function(x, ...) {
 #'
 #' @param object An object of class \code{semiparMF}.
 #' @param ... Additional arguments.
+#'
+#' @return A list of class \code{summary.semiparMF} containing:
+#'   \item{coefficients}{A list of estimated parameters (beta, gamma, rho).}
+#'   \item{last_mspe}{The Mean Squared Prediction Error from the final iteration.}
+#'   \item{residuals_summary}{Summary statistics of the residuals.}
+#'   \item{iterations}{Total number of iterations performed.}
+#'   \item{call}{The function call.}
 #' @export
 summary.semiparMF <- function(object, ...) {
     res <- list(
@@ -36,6 +45,8 @@ summary.semiparMF <- function(object, ...) {
 #'
 #' @param x An object of class \code{summary.semiparMF}.
 #' @param ... Additional arguments.
+#'
+#' @return The input object \code{x} is returned invisibly.
 #' @export
 print.summary.semiparMF <- function(x, ...) {
     cat("\n-- Model Summary --\n")
@@ -52,6 +63,7 @@ print.summary.semiparMF <- function(x, ...) {
     cat("\nConvergence:\n")
     cat("  Iterations: ", x$iterations, "\n")
     cat("  Final MSPE: ", x$last_mspe, "\n")
+    invisible(x)
 }
 
 #' Plot Convergence History
@@ -60,6 +72,8 @@ print.summary.semiparMF <- function(x, ...) {
 #'
 #' @param x An object of class \code{semiparMF}.
 #' @param ... Additional graphical parameters.
+#'
+#' @return No return value, called for side effects (plotting).
 #' @export
 plot.semiparMF <- function(x, ...) {
     if (length(x$history) < 2) {
@@ -89,6 +103,7 @@ plot.semiparMF <- function(x, ...) {
 #' @param new_z Numeric matrix (N x T_new) for the parametric covariate.
 #' @param new_w Numeric matrix (N x T_new) for the neighborhood covariate.
 #' @param ... Additional arguments.
+#'
 #' @return A matrix (N x T_new) of predicted values.
 #' @export
 predict.semiparMF <- function(object, new_high_freq, new_z, new_w, ...) {

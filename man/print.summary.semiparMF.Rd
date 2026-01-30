@@ -11,6 +11,9 @@
 
 \item{...}{Additional arguments.}
 }
+\value{
+The input object \code{x} is returned invisibly.
+}
 \description{
 Print Summary for SemiparMF
 }

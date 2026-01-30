@@ -5,3 +5,7 @@ air.toml
 ^cran-comments\.md$
 ^\.github$
 ^revdep$
+^CRAN-SUBMISSION$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

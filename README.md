@@ -18,6 +18,7 @@ The methodology is based on the paper:
 > Semiparametric Spatiotemporal Model with Mixed Frequencies: With
 > Application in Crop Forecasting. Science & Engineering Journal, 15(2),
 > 90-107.
+> <https://scienggj.org/2022/SciEnggJ%202022-vol15-no02-p90-107-Malabanan%20et%20al.pdf>
 
 <!-- badges: start -->
 
